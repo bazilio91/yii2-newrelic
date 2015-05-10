@@ -14,6 +14,7 @@ class ConsoleHandler extends BaseHandler
             Application::EVENT_AFTER_ACTION,
             function () use ($app) {
                 foreach ($app->requestedParams as $key => $value) {
+                    $this->getAgent()->backgroundJob();
                     $this->getAgent()->addCustomParameter($key, (string)$value);
                 }
             }

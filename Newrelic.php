@@ -2,8 +2,6 @@
 
 namespace bazilio\yii\newrelic;
 
-require_once __DIR__ . '/vendor/autoload.php';
-
 use bazilio\yii\newrelic\handlers\BaseHandler;
 use bazilio\yii\newrelic\handlers\ConsoleHandler;
 use bazilio\yii\newrelic\handlers\WebHandler;
