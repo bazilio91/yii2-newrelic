@@ -15,7 +15,7 @@ class ConsoleHandler extends BaseHandler
             function () use ($app) {
                 foreach ($app->requestedParams as $key => $value) {
                     $this->getAgent()->backgroundJob();
-                    $this->getAgent()->addCustomParameter($key, var_export($value));
+                    $this->getAgent()->addCustomParameter($key, var_export($value, true));
                 }
             }
         );
