@@ -16,7 +16,7 @@ class BaseHandler extends Handler
         );
 
         $app->on(
-            Application::EVENT_AFTER_ACTION,
+            Application::EVENT_BEFORE_ACTION,
             function () use ($app) {
                 $this->getAgent()->nameTransaction($app->controller->id . '/' . $app->requestedAction->id);
             }
