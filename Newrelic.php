@@ -16,6 +16,10 @@ use yii\base\Component;
 class Newrelic extends Component implements BootstrapInterface
 {
     /**
+     * @var bool Enable agent
+     */
+    public $enabled = true;
+    /**
      * @var \NewRelic\NewRelic
      */
     public $agent;
@@ -45,6 +49,10 @@ class Newrelic extends Component implements BootstrapInterface
      */
     public function bootstrap($app)
     {
+        if (!$this->enabled) {
+            return;
+        }
+
         if ($this->handler) {
             $handler = new $this->handler(['newrelic' => $this]);
         } elseif ($app instanceof \yii\web\Application) {
@@ -62,7 +70,7 @@ class Newrelic extends Component implements BootstrapInterface
     {
         parent::init();
 
-        if (Agent::isLoaded()) {
+        if ($this->enabled && Agent::isLoaded()) {
             $this->name = $this->name ? $this->name : \Yii::$app->name;
             $this->agent = new Agent();
             $this->agent->setAppname($this->name, $this->licence);
