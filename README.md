@@ -45,7 +45,8 @@ return [
             'class' => 'bazilio\yii\newrelic\Newrelic',
             'name' => 'My App Frontend', // optional, uses Yii::$app->name by default
             'handler' => 'class/name', // optional, your custom handler
-            'licence' => '...' // optional
+            'licence' => '...', // optional
+            'enabled' => false // optional, default = true
         ]
     ],
 ];
