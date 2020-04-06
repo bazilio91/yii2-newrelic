@@ -30,7 +30,7 @@ php composer.phar require --prefer-dist bazilio/yii2-newrelic
 or add
 
 ```json
-"bazilio/yii2-newrelic": "~0.0.1"
+"bazilio/yii2-newrelic": "^0.0.7"
 ```
 
 to the require section of your composer.json.
@@ -52,7 +52,8 @@ return [
             'handler' => 'class/name', // optional, your custom handler
             'licence' => '...', // optional
             'enabled' => false // optional, default = true
-        ]
+            'enableEndUser' => false, // optional, default = true
+        ],
     ],
 ];
 ```
