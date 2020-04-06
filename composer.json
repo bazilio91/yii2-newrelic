@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "sobanvuex/php-newrelic": "1.*",
+        "sobanvuex/php-newrelic": "^2.0",
         "php": ">=5.4.0",
         "yiisoft/yii2": "*"
     },

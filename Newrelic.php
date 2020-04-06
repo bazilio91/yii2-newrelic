@@ -5,7 +5,7 @@ namespace bazilio\yii\newrelic;
 use bazilio\yii\newrelic\handlers\BaseHandler;
 use bazilio\yii\newrelic\handlers\ConsoleHandler;
 use bazilio\yii\newrelic\handlers\WebHandler;
-use NewRelic\NewRelic as Agent;
+use SobanVuex\NewRelic\Agent;
 use yii\base\BootstrapInterface;
 use yii\base\Component;
 
@@ -20,7 +20,7 @@ class Newrelic extends Component implements BootstrapInterface
      */
     public $enabled = true;
     /**
-     * @var \NewRelic\NewRelic
+     * @var Agent
      */
     public $agent;
 
@@ -71,7 +71,7 @@ class Newrelic extends Component implements BootstrapInterface
         parent::init();
 
         if ($this->enabled) {
-            if (Agent::isLoaded()) {
+            if (extension_loaded('newrelic')) {
                 $this->name = $this->name ? $this->name : \Yii::$app->name;
                 $this->agent = new Agent();
                 $this->agent->setAppname($this->name, $this->licence);
