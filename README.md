@@ -47,6 +47,7 @@ return [
     'components' => [
         // ...
         'newrelic' => [
+            'enableEndUser' => true, // MIND THIS! It is JS instrumentation for end user. Default is true.
             'class' => 'bazilio\yii\newrelic\Newrelic',
             'name' => 'My App Frontend', // optional, uses Yii::$app->name by default
             'handler' => 'class/name', // optional, your custom handler
