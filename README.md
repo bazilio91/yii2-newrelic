@@ -30,7 +30,7 @@ php composer.phar require --prefer-dist bazilio/yii2-newrelic
 or add
 
 ```json
-"bazilio/yii2-newrelic": "~0.0.1"
+"bazilio/yii2-newrelic": "^1.0"
 ```
 
 to the require section of your composer.json.
