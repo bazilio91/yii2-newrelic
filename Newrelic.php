@@ -32,7 +32,7 @@ class Newrelic extends Component implements BootstrapInterface
     /**
      * @var string Licence key
      */
-    public $licence = 'newrelic.license';
+    public $licence = null; // use extension key by default
 
     /**
      * @var string handlers\Handler
